@@ -125,40 +125,40 @@ def find_floor(lego_length):
 
 
 
-CELLS = 20
-
-
-def inventory():
-    brick_height = [0] * CELLS
-    brick_length = [0] * CELLS
-    brick_width = [0] * CELLS
-    brick_num = [0] * CELLS  # individual bricks of the one type
-    shape_height = 0
-    shape_length = 0
-    shape_width = 0
-
-    cell_count = 0  # how many cells total
-    brick_total = 0  # how many bricks total
-
-    welcome()
-    more = 'y'
-
-    while more == 'y':
-        brick_num[cell_count] = get_brick_count()
-        brick_total = brick_total + brick_num[cell_count]
-        brick_height[cell_count] = get_brick_height()
-        brick_length[cell_count] = get_brick_length()
-        brick_width[cell_count] = get_brick_width()
-        more = more_bricks()
-        cell_count = cell_count + 1
-
-    print("Ok, let's build something cool. Today, it's a cube.\n")
-    shape_height = get_shape_height()
-    shape_length = get_shape_length()
-    shape_width = get_shape_width()
-    print_summary(cell_count, brick_num, brick_total, brick_height,
-                  brick_length, brick_width, shape_height, shape_length,
-                  shape_width)
+# CELLS = 20
+#
+#
+# def inventory():
+#     brick_height = [0] * CELLS
+#     brick_length = [0] * CELLS
+#     brick_width = [0] * CELLS
+#     brick_num = [0] * CELLS  # individual bricks of the one type
+#     shape_height = 0
+#     shape_length = 0
+#     shape_width = 0
+#
+#     cell_count = 0  # how many cells total
+#     brick_total = 0  # how many bricks total
+#
+#     welcome()
+#     more = 'y'
+#
+#     while more == 'y':
+#         brick_num[cell_count] = get_brick_count()
+#         brick_total = brick_total + brick_num[cell_count]
+#         brick_height[cell_count] = get_brick_height()
+#         brick_length[cell_count] = get_brick_length()
+#         brick_width[cell_count] = get_brick_width()
+#         more = more_bricks()
+#         cell_count = cell_count + 1
+#
+#     print("Ok, let's build something cool. Today, it's a cube.\n")
+#     shape_height = get_shape_height()
+#     shape_length = get_shape_length()
+#     shape_width = get_shape_width()
+#     print_summary(cell_count, brick_num, brick_total, brick_height,
+#                   brick_length, brick_width, shape_height, shape_length,
+#                   shape_width)
 
 # ************************************************ need to make into another method
 # def welcome():
