@@ -1,3 +1,6 @@
+
+
+
 def main():
     lego_height = 0
     lego_length = 0
@@ -7,11 +10,12 @@ def main():
 
     lego_height = lego_piece_height()
     lego_length = lego_piece_length()
+    lego_width =  lego_piece_width()
     shape = pick_a_shape()
     if shape == 1:
         find_wall(lego_height, lego_length)
     elif shape == 2:
-        find_floor(lego_length)
+        find_floor(lego_length, lego_width)
 
 
 # welcome message
@@ -54,6 +58,21 @@ def lego_piece_length():
                 print ("We are building with legos in a 3-dimensional world. Try a number between 1 and 22.")
         except:
             print ("Remember we are trying to find the dimensions of the lego and we are using numbers. Put in how many units long it is:")
+
+def lego_piece_width():
+    # Find lego brick length
+    while True:
+        try:
+            lego_width = int(input("What is the unit width of the lego are you building with?\n"))
+            if lego_width<= 22 and lego_width > 0:
+                return lego_width
+            elif lego_width > 22:
+                print("Those are pretty big bricks. Let's try something smaller.")
+            else:
+                print("We are building with legos in a 3-dimensional world. Try a number between 1 and 22.")
+        except:
+            print(
+                "Remember we are trying to find the dimensions of the lego and we are using numbers. Put in how many units wide it is:")
 
 def pick_a_shape():
     # which shape to build
@@ -120,8 +139,9 @@ def find_floor(lego_length):
             print ("your responses should be be whole numbers. Try it again:")
     print ("ok, so you want a", dimensions_wide, "by", dimensions_length, "floor.")
     print ("for a floor you also need to know how wide your legos are.")
-    lego_width = input ("how wide are each of your legos?")
-    print ("That means that you will need ", ((dimensions_wide * dimensions_length)/(lego_piece_length * lego_width)), "legos ")
+    lego_width = int(input("how wide are each of your legos?"))
+    build_dimension = dimensions_length * dimensions_wide
+    print ("That means that you will need ", ((dimensions_wide * dimensions_length)/(lego_piece_length * lego_piece_width)), "legos ")
 
 
 
